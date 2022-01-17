@@ -1,0 +1,50 @@
+<%
+var protocolHostname = 'https://www.example.jp';
+var siteName = '〓サイト名〓';
+%>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title><%= meta.title %></title>
+<meta name="description" content="<%= meta.description %>">
+<!-- Facebook OGP -->
+<meta property="og:url" content="<%= protocolHostname %><%= meta.pathName %>">
+<% if (isTop) { %>
+  <meta property="og:type" content="website">
+<% } else { %>
+  <meta property="og:type" content="article">
+<% } %>
+<meta property="og:title" content="<%= meta.title %>">
+<meta property="og:description" content="<%= meta.description %>">
+<meta property="og:image" content="<%= protocolHostname %>/ogp.png">
+<meta property="og:site_name" content="<%= siteName %>">
+<!-- Twitter card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="<%- meta.title %>">
+<meta name="twitter:description" content="<%- meta.description %>">
+<meta name="twitter:url" content="<%= protocolHostname %><%= meta.pathName %>">
+<meta name="twitter:image" content="<%= protocolHostname %>/ogp.png">
+<!-- icon -->
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- url normalization -->
+<link rel="canonical" href="<%= protocolHostname %><%= meta.pathName %>">
+<!-- structured data -->
+<script type="application/ld+json">
+{
+  "@context":"http://schema.org",
+  "@type":"website",
+  "name":"<%= siteName %>",
+  "inLanguage":"jp",
+  "publisher": {
+  "@type": "Organization",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "<%= protocolHostname %>/apple-touch-icon.png"
+  }},
+  "copyrightYear":"2021-01-01T00:00:00+0000",
+  "headline":"<%= meta.title %>",
+  "description":"<%= meta.description %>",
+  "url":"<%= protocolHostname %><%= meta.pathName %>"
+}
+</script>

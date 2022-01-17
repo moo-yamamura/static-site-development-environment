@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<%
+isTop = false; // トップ:true  下層ページ:false
+meta = {
+  title: 'Example',
+  description: 'Exampleページのディスクリプション',
+  pathName: '/example/' // トップ:なし  下層ページ:/ディレクトリ名/ 
+};
+%>
+<html>
+<head>
+<!-- google tag manager -->
+<%- include('../_partial/analytics/_google-tag-manager') %>
+<!-- head -->
+<%- include('../_partial/_head', {meta:meta, isTop:isTop}); %>
+<!-- common css -->
+<%- include('../_partial/assets/_common-css') %>
+<!-- unique css -->
+<link rel="stylesheet" href="/assets/css/underlayer/example.css">
+<!-- common js -->
+<%- include('../_partial/assets/_common-js') %>
+</head>
+
+<body>
+<!-- google tag manager (noscript) -->
+<%- include('../_partial/analytics/_google-tag-manager-noscript') %>
+<!-- site header -->
+<%- include('../_partial/layout/_site-header') %>
+<!-- main contents -->
+<div class="mainContents">
+  <h1 class="pageTitle">Example</h1>
+  <section class="section section--level2">
+    <h2 class="section__title section__title--level2">mixin使用例</h2>
+    <section class="section section--level3">
+      <h3 class="section__title section__title--level3">ボーダー</h3>
+      <div class="section__description">
+        【名前】<br>
+        border<br>
+        <br>
+        【引数】<br>
+        $t: border-top-width[ 数値 ]<br>
+        $r: border-top-right[ 数値 ]<br>
+        $b: border-top-bottom[ 数値 ]<br>
+        $l: border-top-left[ 数値 ]<br>
+        $s: border-style[ s(solid) / do(dotted) / da(dashed) ]<br>
+        $c: border-color[ カラーコード ]
+      </div>
+      <section class="section section--level4">
+        <h4 class="section__title section__title--level4">
+          <code class="section__code">@include m.border($t:1, $b:4);</code>
+        </h4>
+        <div class="border"></div>
+      </section>
+      <section class="section section--level4">
+        <h4 class="section__title section__title--level4">
+          <code class="section__code">@include m.border($t:1, $r:2, $s:do, $c:#4a53bd);</code>
+        </h4>
+        <div class="border border--dotted"></div>
+      </section>
+      <section class="section section--level4">
+        <h4 class="section__title section__title--level4">
+          <code class="section__code">@include m.border($b:3, $l:4, $s:da, $c:#4a53bd);</code>
+        </h4>
+        <div class="border border--dashed"></div>
+      </section>
+    </section>
+    <section class="section section--level3">
+      <h3 class="section__title section__title--level3">フレックスボックス</h3>
+      <div class="section__description">
+        【名前】<br>
+        flex<br>
+        <br>
+        【引数】<br>
+        $fw: flex-wrap[ w(wrap) / wr(wrap-reverse) ]<br>
+        $jc: justify-content[ fe(flex-end) / c(center) / sb(space-between) / sa(space-around) ]<br>
+        $ai: align-items[ c(center) / fs(flex-start) / fe(flex-end) ]
+      </div>
+      <section class="section section--level4">
+        <h4 class="section__title section__title--level4">
+          <code class="section__code">@include m.flex;</code>
+        </h4>
+        <ul class="flex flex--nowrap">
+          <li class="flex__item"></li>
+          <li class="flex__item"></li>
+          <li class="flex__item"></li>
+          <li class="flex__item"></li>
+          <li class="flex__item"></li>
+        </ul>
+      </section>
+      <section class="section section--level4">
+        <h4 class="section__title section__title--level4">
+          <code class="section__code">@include m.flex($fw:w);</code>
+          →
+          <code class="section__code">flex-wrap: wrap;</code>
+        </h4>
+        <ul class="flex flex--wrap">
+          <li class="flex__item"></li>
+          <li class="flex__item"></li>
+          <li class="flex__item"></li>
+          <li class="flex__item"></li>
+          <li class="flex__item"></li>
+        </ul>
+      </section>
+      <section class="section section--level4">
+        <h4 class="section__title section__title--level4">
+          <code class="section__code">@include m.flex($jc:c);</code>
+          →
+          <code class="section__code">justify-content: center;</code>
+        </h4>
+        <ul class="flex flex--justifyCenter">
+          <li class="flex__item"></li>
+          <li class="flex__item"></li>
+          <li class="flex__item"></li>
+        </ul>
+      </section>
+      <section class="section section--level4">
+        <h4 class="section__title section__title--level4">
+          <code class="section__code">@include m.flex($ai:c);</code>
+          →
+          <code class="section__code">align-items: center;</code>
+        </h4>
+        <ul class="flex flex--alignCenter">
+          <li class="flex__item"></li>
+          <li class="flex__item"></li>
+          <li class="flex__item"></li>
+        </ul>
+      </section>
+    </section>
+    <section class="section section--level3">
+      <h3 class="section__title section__title--level3">ホバー透過アニメーション</h3>
+      <div class="section__description">
+        【名前】<br>
+        hoverOpacity<br>
+        <br>
+        【引数】<br>
+        $d: transition-duration[ 数値 ]<br>
+        $o: opacity[ 数値 ]
+      </div>
+      <section class="section section--level4">
+        <h4 class="section__title section__title--level4">
+          <code class="section__code">@include m.hoverOpacity;</code>
+        </h4>
+        <p><a href="#" class="hoverOpacity">Hover Opacity Animation</a></p>
+      </section>
+      <section class="section section--level4">
+        <h4 class="section__title section__title--level4">
+          <code class="section__code">@include m.hoverOpacity($d:1);</code>
+        </h4>
+        <p><a href="#" class="hoverOpacity hoverOpacity--duration">Hover Opacity Animation</a></p>
+      </section>
+      <section class="section section--level4">
+        <h4 class="section__title section__title--level4">
+          <code class="section__code">@include m.hoverOpacity($o:0.2);</code>
+        </h4>
+        <p><a href="#" class="hoverOpacity hoverOpacity--opacity">Hover Opacity Animation</a></p>
+      </section>
+    </section>
+    <section class="section section--level3">
+      <h3 class="section__title section__title--level3">メディアクエリ</h3>
+      <section class="section section--level4">
+        <h4 class="section__title section__title--level4">
+          <code class="section__code">@include m.mediaMax(1200px)</code>
+        </h4>
+        <div class="mediaquery mediaquery--maxWidth">1200px以下</div>
+      </section>
+      <section class="section section--level4">
+        <h4 class="section__title section__title--level4">
+          <code class="section__code">@include m.mediaMaxTablet</code>
+        </h4>
+        <div class="mediaquery mediaquery--maxTablet">タブレットサイズ以下</div>
+      </section>
+      <section class="section section--level4">
+        <h4 class="section__title section__title--level4">
+          <code class="section__code">@include m.mediaMaxSp</code>
+        </h4>
+        <div class="mediaquery mediaquery--maxSp">スマートフォンサイズ以下</div>
+      </section>
+      <section class="section section--level4">
+        <h4 class="section__title section__title--level4">
+          <code class="section__code">@include m.mediaMin(1201px)</code>
+        </h4>
+        <div class="mediaquery mediaquery--minWidth">1201px以上</div>
+      </section>
+      <section class="section section--level4">
+        <h4 class="section__title section__title--level4">
+          <code class="section__code">@include m.mediaMinPc</code>
+        </h4>
+        <div class="mediaquery mediaquery--minPc">PCサイズ以上</div>
+      </section>
+      <section class="section section--level4">
+        <h4 class="section__title section__title--level4">
+          <code class="section__code">@include m.mediaMinTablet</code>
+        </h4>
+        <div class="mediaquery mediaquery--minTablet">タブレットサイズ以上</div>
+      </section>
+    </section>
+  </section>
+  <section class="section section--level2">
+    <h2 class="section__title section__title--level2">遅延読み込み</h2>
+    <section class="section section--level3">
+      <h3 class="section__title section__title--level3">画像</h3>
+      <section class="section section--level4">
+        <h4 class="section__title section__title--level4">
+          <code class="section__code">&lt;img data-src="https://placehold.jp/375x375.png" alt="" class="lazyload"&gt;</code>
+        </h4>
+        <ul class="imageList">
+          <li class="imageList__item">
+            <img data-src="https://placehold.jp/375x375.png" alt="" class="lazyload">
+          </li>
+          <li class="imageList__item">
+            <img data-src="https://placehold.jp/375x375.png" alt="" class="lazyload">
+          </li>
+          <li class="imageList__item">
+            <img data-src="https://placehold.jp/375x375.png" alt="" class="lazyload">
+          </li>
+        </ul>
+      </section>
+    </section>
+    <section class="section section--level3">
+      <h3 class="section__title section__title--level3">iframe</h3>
+      <section class="section section--level4">
+        <h4 class="section__title section__title--level4">
+          <code class="section__code">&lt;iframe data-src="https://www.youtube.com/embed/FjStW6x33gs" class="lazyload"&gt;</code>
+        </h4>
+        <iframe width="560" height="315" data-src="https://www.youtube.com/embed/FjStW6x33gs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="lazyload"></iframe>
+      </section>
+    </section>
+    <section class="section section--level3">
+      <h3 class="section__title section__title--level3">背景</h3>
+      <section class="section section--level4">
+        <h4 class="section__title section__title--level4">
+          <code class="section__code">&lt;div data-bg="https://placehold.jp/1000x500.png" class="lazyload"&gt;</code>
+        </h4>
+        <div data-bg="https://placehold.jp/1000x500.png" class="backgroundImage lazyload"></div>
+      </section>
+    </section>
+  </section>
+</div>
+<!-- site footer -->
+<%- include('../_partial/layout/_site-footer') %>
+</body>
+</html>

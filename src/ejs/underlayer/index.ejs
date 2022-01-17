@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<%
+isTop = false; // トップ:true  下層ページ:false
+meta = {
+  title: '〓下層ページ〓',
+  description: '〓下層ページのディスクリプション〓',
+  pathName: '' // トップ:なし  下層ページ:/ディレクトリ名/ 
+};
+%>
+<html>
+<head>
+<!-- google tag manager -->
+<%- include('../_partial/analytics/_google-tag-manager') %>
+<!-- head -->
+<%- include('../_partial/_head', {meta:meta, isTop:isTop}); %>
+<!-- common css -->
+<%- include('../_partial/assets/_common-css') %>
+<!-- unique css -->
+<link rel="stylesheet" href="/assets/css/underlayer/underlayer.css">
+<!-- common js -->
+<%- include('../_partial/assets/_common-js') %>
+<!-- unique js -->
+<script defer src="/assets/js/underlayer/underlayer.js"></script>
+</head>
+
+<body>
+<!-- google tag manager (noscript) -->
+<%- include('../_partial/analytics/_google-tag-manager-noscript') %>
+<!-- site header -->
+<%- include('../_partial/layout/_site-header') %>
+<!-- main contents -->
+<div class="mainContents">
+  <p>下層ページ</p>
+</div>
+<!-- site footer -->
+<%- include('../_partial/layout/_site-footer') %>
+</body>
+</html>
