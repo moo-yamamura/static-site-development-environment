@@ -13,14 +13,10 @@ meta = {
 <%- include('./_partial/analytics/_google-tag-manager') %>
 <!-- head -->
 <%- include('./_partial/_head', {meta:meta, isTop:isTop}); %>
-<!-- common css -->
+<!-- css -->
 <%- include('./_partial/assets/_common-css') %>
-<!-- unique css -->
-<link rel="stylesheet" href="/assets/css/top.css">
-<!-- common js -->
+<!-- js -->
 <%- include('./_partial/assets/_common-js') %>
-<!-- unique js -->
-<script defer src="/assets/js/top.js"></script>
 </head>
 
 <body>
@@ -28,10 +24,10 @@ meta = {
 <%- include('./_partial/analytics/_google-tag-manager-noscript') %>
 <!-- site header -->
 <%- include('./_partial/layout/_site-header') %>
-<!-- main contents -->
-<div class="mainContents">
+<!-- top -->
+<main class="mainContents mainContents--top">
   <p>トップ</p>
-</div>
+</main>
 <!-- site footer -->
 <%- include('./_partial/layout/_site-footer') %>
 </body>

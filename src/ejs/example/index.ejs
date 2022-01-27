@@ -13,11 +13,9 @@ meta = {
 <%- include('../_partial/analytics/_google-tag-manager') %>
 <!-- head -->
 <%- include('../_partial/_head', {meta:meta, isTop:isTop}); %>
-<!-- common css -->
+<!-- css -->
 <%- include('../_partial/assets/_common-css') %>
-<!-- unique css -->
-<link rel="stylesheet" href="/assets/css/underlayer/example.css">
-<!-- common js -->
+<!-- js -->
 <%- include('../_partial/assets/_common-js') %>
 </head>
 
@@ -26,8 +24,8 @@ meta = {
 <%- include('../_partial/analytics/_google-tag-manager-noscript') %>
 <!-- site header -->
 <%- include('../_partial/layout/_site-header') %>
-<!-- main contents -->
-<div class="mainContents">
+<!-- example -->
+<main class="mainContents mainContents--example">
   <h1 class="pageTitle">Example</h1>
   <section class="section section--level2">
     <h2 class="section__title section__title--level2">mixin使用例</h2>
@@ -235,7 +233,7 @@ meta = {
       </section>
     </section>
   </section>
-</div>
+</main>
 <!-- site footer -->
 <%- include('../_partial/layout/_site-footer') %>
 </body>
