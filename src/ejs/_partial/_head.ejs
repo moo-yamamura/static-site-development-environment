@@ -18,17 +18,21 @@ var siteName = '〓サイト名〓';
 <meta property="og:description" content="<%= meta.description %>">
 <meta property="og:image" content="<%= protocolHostname %>/ogp.png">
 <meta property="og:site_name" content="<%= siteName %>">
+<!-- /Facebook OGP -->
 <!-- Twitter card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="<%- meta.title %>">
 <meta name="twitter:description" content="<%- meta.description %>">
 <meta name="twitter:url" content="<%= protocolHostname %><%= meta.pathName %>">
 <meta name="twitter:image" content="<%= protocolHostname %>/ogp.png">
+<!-- /Twitter card -->
 <!-- icon -->
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- /icon -->
 <!-- url normalization -->
 <link rel="canonical" href="<%= protocolHostname %><%= meta.pathName %>">
+<!-- /url normalization -->
 <!-- structured data -->
 <script type="application/ld+json">
 {
@@ -48,3 +52,4 @@ var siteName = '〓サイト名〓';
   "url":"<%= protocolHostname %><%= meta.pathName %>"
 }
 </script>
+<!-- /structured data -->

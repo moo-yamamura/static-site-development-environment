@@ -9,28 +9,20 @@ meta = {
 %>
 <html>
 <head>
-<!-- google tag manager -->
-<%- include('../_partial/analytics/_google-tag-manager') %>
-<!-- head -->
+<%- include('../_partial/analytics/_google-tag-manager'); %>
 <%- include('../_partial/_head', {meta:meta, isTop:isTop}); %>
-<!-- css -->
-<%- include('../_partial/assets/_common-css') %>
-<!-- js -->
-<%- include('../_partial/assets/_common-js') %>
-<!-- unique js -->
-<script defer src="/assets/js/underlayer/underlayer.js"></script>
+<%- include('../_partial/assets/_common-css'); %>
+<%- include('../_partial/assets/_common-js'); %>
 </head>
 
 <body>
-<!-- google tag manager (noscript) -->
-<%- include('../_partial/analytics/_google-tag-manager-noscript') %>
-<!-- site header -->
-<%- include('../_partial/layout/_site-header') %>
+<%- include('../_partial/analytics/_google-tag-manager-noscript'); %>
+<%- include('../_partial/layout/_site-header'); %>
 <!-- underlayer -->
 <main class="mainContents mainContents--underlayer">
   <p>下層ページ</p>
 </main>
-<!-- site footer -->
+<!-- /underlayer -->
 <%- include('../_partial/layout/_site-footer') %>
 </body>
 </html>

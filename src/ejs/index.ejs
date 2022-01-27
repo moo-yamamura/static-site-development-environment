@@ -9,26 +9,20 @@ meta = {
 %>
 <html>
 <head>
-<!-- google tag manager -->
-<%- include('./_partial/analytics/_google-tag-manager') %>
-<!-- head -->
+<%- include('./_partial/analytics/_google-tag-manager'); %>
 <%- include('./_partial/_head', {meta:meta, isTop:isTop}); %>
-<!-- css -->
-<%- include('./_partial/assets/_common-css') %>
-<!-- js -->
-<%- include('./_partial/assets/_common-js') %>
+<%- include('./_partial/assets/_common-css'); %>
+<%- include('./_partial/assets/_common-js'); %>
 </head>
 
 <body>
-<!-- google tag manager (noscript) -->
-<%- include('./_partial/analytics/_google-tag-manager-noscript') %>
-<!-- site header -->
-<%- include('./_partial/layout/_site-header') %>
+<%- include('./_partial/analytics/_google-tag-manager-noscript'); %>
+<%- include('./_partial/layout/_site-header'); %>
 <!-- top -->
 <main class="mainContents mainContents--top">
   <p>トップ</p>
 </main>
-<!-- site footer -->
-<%- include('./_partial/layout/_site-footer') %>
+<!-- /top -->
+<%- include('./_partial/layout/_site-footer'); %>
 </body>
 </html>
