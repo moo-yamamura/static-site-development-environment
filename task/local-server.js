@@ -39,7 +39,6 @@ const localServer = done => {
       javascriptLint,
       javascriptCompile,
       javascriptBundle,
-      javascriptBundleMinify,
       browserReload
     )
   );
