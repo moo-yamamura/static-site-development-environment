@@ -1,3 +1,5 @@
-import { siteHeader } from './partial/_site-header.js';
+// main.js
+import { fixedNavigation, humbergerMenu } from './partial/_site-header.js';
 
-siteHeader();
+fixedNavigation();
+humbergerMenu();
